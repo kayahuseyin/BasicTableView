@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        
         let y1 = Foods(foodName: "Ayran", foodPhotoName: "ayran", foodPrice: 3.0)
         let y2 = Foods(foodName: "Baklava", foodPhotoName: "baklava", foodPrice: 20.0)
         let y3 = Foods(foodName: "Fanta", foodPhotoName: "fanta", foodPrice: 5.0)
@@ -83,6 +84,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
     
-    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Iromi Cafe"
+    }
 
 }
