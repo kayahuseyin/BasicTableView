@@ -13,6 +13,9 @@
 		4E869FBF2B2848D300BB4C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E869FBD2B2848D300BB4C07 /* Main.storyboard */; };
 		4E869FC12B2848D400BB4C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E869FC02B2848D400BB4C07 /* Assets.xcassets */; };
 		4E869FC42B2848D400BB4C07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E869FC22B2848D400BB4C07 /* LaunchScreen.storyboard */; };
+		4E869FCC2B284F6F00BB4C07 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E869FCB2B284F6F00BB4C07 /* Foods.swift */; };
+		4E869FCF2B284FA700BB4C07 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E869FCD2B284FA700BB4C07 /* DemoTableViewCell.swift */; };
+		4E869FD02B284FA700BB4C07 /* DemoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E869FCE2B284FA700BB4C07 /* DemoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		4E869FC02B2848D400BB4C07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E869FC32B2848D400BB4C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E869FC52B2848D400BB4C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E869FCB2B284F6F00BB4C07 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
+		4E869FCD2B284FA700BB4C07 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
+		4E869FCE2B284FA700BB4C07 /* DemoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				4E869FB72B2848D300BB4C07 /* AppDelegate.swift */,
 				4E869FB92B2848D300BB4C07 /* SceneDelegate.swift */,
 				4E869FBB2B2848D300BB4C07 /* ViewController.swift */,
+				4E869FCB2B284F6F00BB4C07 /* Foods.swift */,
+				4E869FCD2B284FA700BB4C07 /* DemoTableViewCell.swift */,
+				4E869FCE2B284FA700BB4C07 /* DemoTableViewCell.xib */,
 				4E869FBD2B2848D300BB4C07 /* Main.storyboard */,
 				4E869FC02B2848D400BB4C07 /* Assets.xcassets */,
 				4E869FC22B2848D400BB4C07 /* LaunchScreen.storyboard */,
@@ -127,6 +136,7 @@
 			files = (
 				4E869FC42B2848D400BB4C07 /* LaunchScreen.storyboard in Resources */,
 				4E869FC12B2848D400BB4C07 /* Assets.xcassets in Resources */,
+				4E869FD02B284FA700BB4C07 /* DemoTableViewCell.xib in Resources */,
 				4E869FBF2B2848D300BB4C07 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +149,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E869FBC2B2848D300BB4C07 /* ViewController.swift in Sources */,
+				4E869FCC2B284F6F00BB4C07 /* Foods.swift in Sources */,
 				4E869FB82B2848D300BB4C07 /* AppDelegate.swift in Sources */,
+				4E869FCF2B284FA700BB4C07 /* DemoTableViewCell.swift in Sources */,
 				4E869FBA2B2848D300BB4C07 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
