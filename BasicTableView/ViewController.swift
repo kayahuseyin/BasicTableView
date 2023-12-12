@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         let y12 = Foods(foodName: "Su", foodPhotoName: "su", foodPrice: 1.0)
         let y13 = Foods(foodName: "Sütlaç", foodPhotoName: "sutlac", foodPrice: 10.0)
         let y14 = Foods(foodName: "Tiramisu", foodPhotoName: "tiramisu", foodPrice: 16.0)
+        let y15 = Foods(foodName: "Hamburger", foodPhotoName: "hamburger", foodPrice: 18.0)
         //Verilerin Listeye Eklenmesi
         foodList.append(y1)
         foodList.append(y2)
@@ -49,6 +50,7 @@ class ViewController: UIViewController {
         foodList.append(y12)
         foodList.append(y13)
         foodList.append(y14)
+        foodList.append(y15)
         
         let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
