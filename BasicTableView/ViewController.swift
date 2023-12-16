@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
     var foodList = [Foods]()
+    var searchedFoodList = [Foods]()
+    
+    var searchStatus = false // Whether the user making search or not
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        self.searchBar.delegate = self
         
         let y1 = Foods(foodName: "Ayran", foodPhotoName: "ayran", foodPrice: 3.0)
         let y2 = Foods(foodName: "Baklava", foodPhotoName: "baklava", foodPrice: 20.0)
@@ -36,7 +41,7 @@ class ViewController: UIViewController {
         let y13 = Foods(foodName: "Sütlaç", foodPhotoName: "sutlac", foodPrice: 10.0)
         let y14 = Foods(foodName: "Tiramisu", foodPhotoName: "tiramisu", foodPrice: 16.0)
         let y15 = Foods(foodName: "Hamburger", foodPhotoName: "hamburger", foodPrice: 18.0)
-        //Verilerin Listeye Eklenmesi
+        
         foodList.append(y1)
         foodList.append(y2)
         foodList.append(y3)
@@ -53,6 +58,22 @@ class ViewController: UIViewController {
         foodList.append(y14)
         foodList.append(y15)
         
+        searchedFoodList.append(y1)
+        searchedFoodList.append(y2)
+        searchedFoodList.append(y3)
+        searchedFoodList.append(y4)
+        searchedFoodList.append(y5)
+        searchedFoodList.append(y6)
+        searchedFoodList.append(y7)
+        searchedFoodList.append(y8)
+        searchedFoodList.append(y9)
+        searchedFoodList.append(y10)
+        searchedFoodList.append(y11)
+        searchedFoodList.append(y12)
+        searchedFoodList.append(y13)
+        searchedFoodList.append(y14)
+        searchedFoodList.append(y15)
+        
         let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
         
@@ -68,19 +89,41 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        foodList.count
+        
+        if searchStatus {
+            searchedFoodList.count
+        } else {
+            foodList.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let order = foodList[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCell", for: indexPath) as! DemoTableViewCell
         
-        cell.foodNameLabel.text = order.foodName
-        cell.foodImageView.image = UIImage(named: order.foodPhotoName!)
-        cell.foodPriceLabel.text = ("\(order.foodPrice!) TL")
+        if searchStatus {
+            let order = searchedFoodList[indexPath.row]
+            cell.foodNameLabel.text = order.foodName
+            cell.foodImageView.image = UIImage(named: order.foodPhotoName!)
+            cell.foodPriceLabel.text = ("\(order.foodPrice!) TL")
+         } else {
+            let order = foodList[indexPath.row]
+            cell.foodNameLabel.text = order.foodName
+            cell.foodImageView.image = UIImage(named: order.foodPhotoName!)
+            cell.foodPriceLabel.text = ("\(order.foodPrice!) TL")
+        }
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if searchStatus {
+            print("\(searchedFoodList[indexPath.row]) is ordered. ")
+        } else {
+            print("\(foodList[indexPath.row]) is ordered")
+        }
         
     }
     
@@ -88,4 +131,21 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return "Iromi Cafe"
     }
 
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    
+        if searchText == "" {
+            searchStatus = false
+        } else {
+            searchStatus = true
+            searchedFoodList = foodList.filter({$0.foodName!.lowercased().starts(with: searchText.lowercased())})
+            //
+        }
+        
+        tableView.reloadData()
+    }
+    
+    
 }
